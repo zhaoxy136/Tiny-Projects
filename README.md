@@ -1,2 +1,3 @@
 # Tiny-Projects
-HTML/CSS
+Some simple projects with my progress of self-study
+
