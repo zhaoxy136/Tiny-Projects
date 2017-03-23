@@ -1,0 +1,136 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+body{
+    background-color: snow;
+}
+
+
+.head{
+    background-color: darkcyan;
+    width: 100%;
+    height: 90px;
+}
+
+.headtitle{
+    float: left;
+    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 30px;
+    color: azure;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+ul{
+    list-style: none;
+    margin-top: 60px;
+    margin-left: 10px;
+    float: left;
+    padding-left: 10px;
+}
+
+li{
+    padding: 2px;
+    display: inline;
+}
+
+a{
+    color: snow;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+}
+
+a:hover, a:active{
+    color: black;
+}
+
+form{
+    float: right;
+    height: 26px;
+    margin-right: 50px;
+}
+
+form input{
+    background-color: #80c5c7;
+    width: 100px;
+    height: 20px;
+    border-radius: 30px;
+    margin-top: 50px;
+}
+
+.headimage{
+    margin: 20px 5px;
+    float: right;
+}
+
+.headimage img{
+    width: 60px;
+    height: 60px;
+}
+
+.body{
+    background-color: cadetblue;
+    width: 100%;
+    height: 600px;
+}
+
+.bdydescribe h3{
+    color: snow;
+    margin-left: 20px;
+    padding-top: 10px;
+}
+
+.bdydescribe p{
+    color: snow;
+    margin: 20px;
+}
+
+.img1, .img2, .img3, .img4{
+    border: 2px solid lightgray;
+    float: left;
+    margin: 10px 8px;
+    text-align: center;
+}
+
+.img1 img, .img2 img, .img3 img, .img4 img{
+    width: 240px;
+    height: 220px;
+}
+
+.img1 p, .img2 p, .img3 p, .img4 p{
+    color: snow;
+    font-size: 20px;
+}
+
+.footer{
+    background-color: darkcyan;
+    height: 80px;
+    text-align: right;
+}
+
+.footer p{
+    color: snow;
+    font-size: 20px;
+    padding: 10px 20px 10px;
+}
+
+.footer a{
+    color: snow;
+    font-size: 20px;
+    padding: 10px 20px 10px;
+}
+.footer a:hover{
+    color: black;
+}
+
+
+
+
+
+
+
+
+
