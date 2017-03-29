@@ -1,8 +1,13 @@
 <?php  
     session_start();
     $_SESSION['user'] = $_POST['username'];
-    //include 'myFunction.php';
-    
+    /*
+    if (isset($_POST['username'])) {
+        $_SESSION['user'] = $_POST['username'];
+        $_SESSION['keyword'] = $_POST['keyword'];
+        header("Location: search.php");
+    }
+    */
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +18,7 @@
     
     <body>
 <?php
+    
     //connect to database
     $conn = mysqli_connect('localhost', 'root', 'root', 'onlineMarket');
     
@@ -26,19 +32,27 @@
         $input_username = mysqli_real_escape_string($conn, $_POST['username']);
         $input_keyword = mysqli_real_escape_string($conn, $_POST['keyword']);
         
+        //check the user
+        if (empty($_POST['username'])) {
+            echo "<script>alert('Please fill your username')</script>";
+            echo "<script>location.href='HW3.html'</script>";
+        }
+        $check_user = mysqli_query($conn, "SELECT * FROM customer WHERE cname = '$input_username'");
+        if (mysqli_num_rows($check_user) < 1) {
+            echo "<script>alert('Sorry! you are not in our database.')</script>";
+            echo "<script>location.href='HW3.html'</script>";
+        }
+        
         $search_query = "SELECT * FROM product WHERE pdescription like '%$input_keyword%'";
         $search_res = mysqli_query($conn, $search_query);
+        //var_dump(mysqli_num_rows($search_res));
         
         //check if there is any result
         if(mysqli_num_rows($search_res) < 1) {
-            echo "<script>alert('No Result Found!')</script>";
+            echo "<script>alert('Sorry! We didn\'t find what you want.')</script>";
             echo "<script>location.href='HW3.html'</script>";
         }
 
-        //create an array to store the orders
-        //index
-        $index=0;
-        
         //create the search results
         echo "<div class = 'search_rst'>
             <table border='1'>
@@ -63,7 +77,8 @@
         }
         echo "</table></div>";
         
-        echo "<"
+        echo "<a href='history.php'><button>View History</button></a>";
+        
     }
     
 ?>
